@@ -6,7 +6,7 @@ import br.com.ada.first.appbanco.service.ContaServiceUtils;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public interface Sacar {
+public interface Saque {
 
     BigDecimal TAXA_SAQUE_PJ = new BigDecimal(0.005);
 

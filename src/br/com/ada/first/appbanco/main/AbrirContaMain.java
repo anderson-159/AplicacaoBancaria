@@ -1,8 +1,7 @@
 package br.com.ada.first.appbanco.main;
 
 import br.com.ada.first.appbanco.entity.Conta;
-import br.com.ada.first.appbanco.entity.ContaCorrente;
-import br.com.ada.first.appbanco.entity.PessoaFisica;
+import br.com.ada.first.appbanco.entity.PessoaJuridica;
 import br.com.ada.first.appbanco.enums.TipoConta;
 import br.com.ada.first.appbanco.factory.AberturaContaFactory;
 import br.com.ada.first.appbanco.service.abrirconta.AberturaConta;
@@ -13,8 +12,8 @@ public class AbrirContaMain {
 
     public static void main(String[] args) {
 
-        PessoaFisica pessoaFisica = new PessoaFisica();
-        pessoaFisica.setNome("Rodrigo");
+        PessoaJuridica cliente = new PessoaJuridica();
+        cliente.setNome("Rodrigo");
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Qual conta voce quer abrir?");
@@ -23,9 +22,12 @@ public class AbrirContaMain {
 
         AberturaConta aberturaConta = AberturaContaFactory.getAberturaConta(tipoConta);
 
-        Conta conta = aberturaConta.abrirConta(pessoaFisica, "0002");
+        Conta conta = aberturaConta.abrirConta(cliente, "0002");
 
-        System.out.println(conta);
+        System.out.println(conta.getClass().getSimpleName() + " - " + conta.toString());
 
     }
+
+
+
 }
